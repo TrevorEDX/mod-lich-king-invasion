@@ -1,0 +1,170 @@
+#
+# mod-lich-king-invasion configuration
+#
+# Copy this file to "mod_lich_king_invasion.conf" (same folder) and edit it.
+# After editing, restart the worldserver or type  .reload config  in game.
+#
+
+[worldserver]
+
+###################################################################################################
+#  GENERAL
+###################################################################################################
+
+#
+#    LichKingInvasion.Enable
+#        Description: Turn the random Lich King invasions on or off.
+#                     GMs can still start one by hand with  .lkinvasion start  when this is off.
+#        Default:     1 - (On)
+#                     0 - (Off)
+
+LichKingInvasion.Enable = 1
+
+#
+#    LichKingInvasion.Announce
+#        Description: Send server-wide chat announcements (start, warning, victory, ...).
+#        Default:     1 - (On)
+
+LichKingInvasion.Announce = 1
+
+#
+#    LichKingInvasion.MinIntervalMinutes
+#    LichKingInvasion.MaxIntervalMinutes
+#        Description: The next invasion happens a random number of minutes between these two
+#                     values after the server starts / after the last invasion ends.
+#        Default:     120 and 240  (every 2 to 4 hours)
+
+LichKingInvasion.MinIntervalMinutes = 120
+LichKingInvasion.MaxIntervalMinutes = 240
+
+#
+#    LichKingInvasion.WarningMinutes
+#        Description: Send a warning announcement this many minutes before an invasion. 0 = no warning.
+#        Default:     2
+
+LichKingInvasion.WarningMinutes = 2
+
+#
+#    LichKingInvasion.MinPlayersOnline
+#        Description: Only start an invasion when at least this many players are online.
+#                     If not enough players are online, it tries again 5 minutes later.
+#        Default:     1
+
+LichKingInvasion.MinPlayersOnline = 1
+
+#
+#    LichKingInvasion.MaxDurationMinutes
+#        Description: If nobody has killed the Lich King after this many minutes, he and his army
+#                     teleport back to Icecrown. 0 = he stays until he is killed.
+#        Default:     60
+
+LichKingInvasion.MaxDurationMinutes = 60
+
+#
+#    LichKingInvasion.Destination
+#        Description: How far into the city he marches.
+#                     1 - Trade District
+#                     2 - All the way to King Varian's throne room in Stormwind Keep
+#        Default:     2
+
+LichKingInvasion.Destination = 2
+
+#
+#    LichKingInvasion.MarchWalk
+#        Description: 1 = the army walks slowly into the city (more dramatic, easier to catch).
+#                     0 = the army runs.
+#        Default:     1
+
+LichKingInvasion.MarchWalk = 1
+
+#
+#    LichKingInvasion.PortalDisplayId
+#        Description: Model used for the portal. 0 = default (the Death Gate model).
+#                     Only change this if the portal looks wrong on your client.
+#        Default:     0
+
+LichKingInvasion.PortalDisplayId = 0
+
+###################################################################################################
+#  DIFFICULTY
+###################################################################################################
+
+#
+#    LichKingInvasion.LichKing.Health
+#        Description: The Lich King's total health. 0 = use the database value (about 2.1 million).
+#        Default:     2000000
+
+LichKingInvasion.LichKing.Health = 2000000
+
+#
+#    LichKingInvasion.LichKing.DamagePercent
+#        Description: Scales the Lich King's melee damage. 100 = normal, 50 = half, 200 = double.
+#        Default:     100
+
+LichKingInvasion.LichKing.DamagePercent = 100
+
+#
+#    LichKingInvasion.LichKing.AttackRange
+#        Description: How far (in yards) the Lich King looks for players and NPCs to attack while marching.
+#        Default:     25
+
+LichKingInvasion.LichKing.AttackRange = 25
+
+#
+#    LichKingInvasion.Minion.HealthPercent
+#    LichKingInvasion.Minion.DamagePercent
+#        Description: Scales the health / melee damage of all his minions. 100 = normal.
+#        Default:     100
+
+LichKingInvasion.Minion.HealthPercent = 100
+LichKingInvasion.Minion.DamagePercent = 100
+
+#
+#    LichKingInvasion.Minion.AttackRange
+#        Description: How far (in yards) minions look for things to attack while marching.
+#        Default:     15
+
+LichKingInvasion.Minion.AttackRange = 15
+
+###################################################################################################
+#  THE SCOURGE ARMY
+###################################################################################################
+
+#
+#    LichKingInvasion.Minions.Starting
+#        Description: Number of minions (ghouls, skeletons, abominations, necromancers) that come
+#                     through the portal with the Lich King.
+#        Default:     8
+
+LichKingInvasion.Minions.Starting = 8
+
+#
+#    LichKingInvasion.Minions.Bodyguards
+#        Description: Number of Shambling Horror bodyguards at his side. More are summoned when
+#                     he drops to 50% health.
+#        Default:     2
+
+LichKingInvasion.Minions.Bodyguards = 2
+
+#
+#    LichKingInvasion.Minions.WaveIntervalSeconds
+#    LichKingInvasion.Minions.WaveSize
+#        Description: Every X seconds the Lich King raises Y more minions to protect him.
+#        Default:     45 and 4
+
+LichKingInvasion.Minions.WaveIntervalSeconds = 45
+LichKingInvasion.Minions.WaveSize = 4
+
+#
+#    LichKingInvasion.Minions.Max
+#        Description: Maximum number of living minions at once.
+#        Default:     20
+
+LichKingInvasion.Minions.Max = 20
+
+#
+#    LichKingInvasion.Minions.RaiseDeadChance
+#        Description: Percent chance that a player or NPC killed by the Scourge rises as a ghoul.
+#        Default:     40
+
+LichKingInvasion.Minions.RaiseDeadChance = 40
